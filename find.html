@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>暮らしの中にある図書館</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="図書館をもっと身近に楽しむための情報サイトです。便利な使い方や本の探し方を分かりやすく紹介します。">
+<meta name="description" content="キーワード検索や分類番号の活用方法など、図書館で本を探すコツを分かりやすく紹介します。">
 
 <!-- ファビコン -->
 <link rel="icon" type="image/x-icon" sizes="16x16" href="images/favicon16.ico">
@@ -13,14 +13,14 @@
 <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512x512.png">
 
 <!-- canonical -->
-<link rel="canonical" href="https://keitowith.github.io/library/">
+<link rel="canonical" href="https://keitowith.github.io/library/find.html">
 
 <!-- OGP -->
-<meta property="og:title" content="暮らしの中にある図書館">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://keitowith.github.io/library/">
+<meta property="og:title" content="本の探し方">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://keitowith.github.io/library/find.html">
 <meta property="og:image" content="https://keitowith.github.io/library/images/ogp.png">
-<meta property="og:description" content="図書館をもっと身近に楽しむための情報サイトです。">
+<meta property="og:description" content="キーワード検索や分類番号、司書への相談など本の探し方を紹介します。">
 <meta property="og:site_name" content="暮らしの中にある図書館">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -51,7 +51,10 @@
 </ul>
 </nav>
 
-
+<div class="sh-test">
+📖最後まで読んでいただき、ありがとうございました。<br>
+今日、素敵な一冊との出会いがありますように。
+</div>
 
 </div>
 <!--/#menubar-->
@@ -67,7 +70,7 @@
 
 <div class="mainimg">
 <div class="slide img1">
-<img src="images/mainimg1.jpg" alt="色とりどりの本が並ぶ図書館">
+<img src="images/mainimg1-3.png" alt="本を読む女性のイラスト">
 </div>
 </div>
 
@@ -77,7 +80,7 @@
 <p>本を借りるだけじゃない、毎日の暮らしに自然と溶け込む図書館の使い方をまとめました。
 学生時代に図書館学を学び司書資格を取得した基礎的な専門知識と、
 利用者としての視点の両方から、図書館の使い方をまとめています。</p>
-<p class="btn"><a href="plus.html#reserve"><i class="fa fa-lightbulb"></i> 便利に使う方法</a><a href="find.html#findtop"><i class="fa fa-bookmark"></i> 本の探し方</a></p>
+<p class="btn"><a href="plus.html#reserve"><i class="fa-solid fa-pen-to-square"></i> 便利に使う方法</a><a href="find.html#findtop"><i class="fa-solid fa-book"></i> 本の探し方</a></p>
 </div>
 </div>
 
@@ -87,59 +90,81 @@
 <div id="contents">
 
 <main>
+<!-- ================================================
+     Builder で選択したパーツ（自動注入・4 件）
+     この <main> 内を編集／並び替え自由
+     ================================================ -->
 
-<section style="max-width:700px; margin:0 auto;">
 
-<h2 class="title5-parts">
-図書館をもっと便利に使う方法
-</h2>
 
-<div>
-<h3>予約して受け取る</h3>
-<p>読みたい本を事前に予約して受け取れます。</p>
+     <!-- ▼ 円形のカラムレイアウト（list-circle1-auto） (list-circle1-auto) -->
+<section id="findtop">
 
-<h3>借りている本の延長</h3>
-<p>条件により貸出期間を延長できます。</p>
+<div class="list-circle1-auto-parts">
 
-<h3>電子書籍の利用</h3>
-<p>スマートフォンやパソコンから利用できます。</p>
-
-<h3>次に読みたい本を登録する</h3>
-<p>気になる本をリスト化できます。</p>
-
-<h3>読書記録をつける</h3>
-<p>読んだ本や冊数を振り返れます。</p>
+<div class="list-parts inview">
+<figure><img src="images/landscape1.png" alt="パソコンで本を探す女性のイラスト"></figure>
+<div class="text-parts">
+<h4 id="keyword">キーワードで探す</h4>
+<p><strong>本のタイトルや著者名、興味のある言葉を入力して探せます。</strong><br>
+読みたい本が決まっているときや、特定のテーマについて調べたいときに便利です。</p>
+</div>
 </div>
 
-<p><a href="plus.html#reserve">図書館をもっと便利に使う方法を詳しく見る</a></p>
+<div class="list-parts inview">
+<figure><img src="images/landscape2.png" alt="本棚から本を探す人物のイラスト"></figure>
+<div class="text-parts">
+<h4 id="classify">分類から探す</h4>
+<p><strong>本は内容ごとに分類番号で整理されているので、好きな分野の番号を大まかに覚えておくと探しやすいです。</strong><br>
+例えば900番台は文学、700番台は芸術です。</p>
+</div>
+</div>
+
+<div class="list-parts inview">
+<figure><img src="images/landscape3.png" alt="カウンターで司書に相談する利用者のイラスト"></figure>
+<div class="text-parts">
+<h4 id="librarian">司書に相談する</h4>
+<p><strong>どんな本を読めばよいか迷ったときは、司書に相談してみましょう。</strong><br>
+調べものの方法や、おすすめの資料についてアドバイスを受けることができます。</p>
+</div>
+</div>
+
+<div class="list-parts inview">
+<figure><img src="images/landscape4.png" alt="おすすめ・特集コーナーのイラスト"></figure>
+<div class="text-parts">
+<h4 id="recommend">おすすめ・特集から探す</h4>
+<p><strong>図書館では季節やテーマごとの特集コーナーが設けられています。</strong><br>
+話題の本や新しいジャンルとの出会いのきっかけになります。</p>
+</div>
+</div>
+
+<!--<div class="list-parts inview">
+<figure><img src="images/landscape2.jpg" alt=""></figure>
+<div class="text-parts">
+<h4>タイトル</h4>
+<p>ここに説明を書きます。サンプルテキスト。</p>
+</div>
+</div>
+ 
+</div>-->
+<!--/.list-circle1-auto-parts square-->
+
+
 
 </section>
 
-<section style="max-width:700px; margin:0 auto;">
 
-<h2 class="title5-parts">
-本の探し方
-</h2>
-<div>
-<h3>キーワードで探す</h3>
-<p>本のタイトルや著者名、興味のある言葉を入力して探せます。</p>
+<!-- ▲ list-circle1-auto -->
 
-<h3>分類から探す</h3>
-<p>本は内容ごとに分類番号で整理されています。</p>
 
-<h3>司書に相談する</h3>
-<p>どんな本を読めばよいか迷ったときは、司書に相談してみましょう。</p>
-
-<h3>おすすめ・特集から探す</h3>
-<p>図書館では季節やテーマごとの特集コーナーが設けられています。</p>
-</div>
-
-<p><a href="find.html#findtop">本の探し方を詳しく見る</a></p>
-
-</section>
 
 </main>
 
+</div>
+<!--/#contents-->
+
+
+<!-- ▼ フッターブロック（footer1） (footer1) -->
 <!-- ▼ フッターブロック（footer1） (footer1) -->
 <footer id="footer1-parts">
 

@@ -1,0 +1,271 @@
+@charset "utf-8";
+
+/* ================================================================
+   以下、Builder で選択したパーツのCSS（自動連結）
+   ================================================================ */
+
+/* ---- 縦書き見出し・本文セット（title11） (title11) ---- */
+/*h2
+---------------------------------------------------------------------------*/
+/*h2*/
+main h2.title11-parts {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/*縦書き*/
+main h2.title11-parts .tate {
+	order: 2;	/*縦書きを横書きの下に。数字が小さい順に並びます。*/
+	display: block;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	line-height: 1.1;	/*文字間隔を少しだけ広く*/
+}
+
+/*横書き*/
+main h2.title11-parts span.small-parts {
+	order: 1;	/*横書きを縦書きの上に。数字が小さい順に並びます。*/
+	display: block;
+	opacity: 0.5;		/*透明度。色を50%出した状態。*/
+	font-size: 0.7rem;	/*文字サイズ70%*/
+	margin-bottom: 1rem;	/*縦書きの下に１文字分のスペース*/
+	letter-spacing: 0.1em;	/*文字間隔を少し広く*/
+}
+
+
+/*見出しのテキストのフェードイン設定
+---------------------------------------------------------------------------*/
+@keyframes fadeIn {
+	0% {opacity: 0;transform: scale(0.1) rotate(-30deg);}
+	100% {opacity: 1;transform: scale(1) rotate(0deg);}
+}
+
+/* 初期状態でテキストを非表示にする */
+.fade-in-text-parts {
+    visibility: hidden;
+}
+
+/* アニメーションを適用するクラス。
+animationの行の「0.2s」が文字の出現のなめらかさで、大きいほどなめらかに出てきます。
+１文字ずつの出現する際の時差は、jsの「テキストのフェードイン効果」の中にある「0.2」で調整できます。*/
+.char {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.2s linear both;
+}
+
+/* ---- 円形のカラムレイアウト（list-circle1-auto） (list-circle1-auto) ---- */
+/*list-circle1-auto-parts（カラムブロック）
+---------------------------------------------------------------------------*/
+.list-circle1-auto-parts * {margin: 0;padding: 0;}
+
+/*ボックス全体*/
+.list-circle1-auto-parts {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));	/*ボックス１個あたりの最低幅が250pxで自動改行*/
+	gap: 3rem;		/*ボックス同士の間に空けるスペース。1.5文字分。*/
+	font-size: 0.9rem;	/*文字サイズ90%*/
+}
+
+/*ボックス１個あたり*/
+.list-circle1-auto-parts .list-parts {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+/*画像*/
+.list-circle1-auto-parts .list-parts figure {
+	border-radius: 50%;	/*円形にする*/
+	overflow: hidden;
+}
+
+/*テキストボックス*/
+.list-circle1-auto-parts .list-parts .text-parts {
+	flex: 1;
+	text-align: center;	/*テキストをセンタリング*/
+}
+
+/*説明だけ小さめにする*/
+.list-circle1-auto-parts .list-parts p {
+	font-size: 0.9em;	/*文字サイズ*/
+	line-height: 1.5;	/*行間*/
+}
+
+/*square（正方形）画像*/
+.list-circle1-auto-parts.square .list-parts figure {
+	width: 100%;
+	aspect-ratio: 1 / 1;	/*幅に対して高さを同じにする*/
+}
+.list-circle1-auto-parts.square .list-parts figure img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;			/*コンテナいっぱいにカバー、余分な部分はカット*/
+	object-position: center;	/*中央部分を表示*/
+}
+
+/* ---- 見出し・本文セット（title5） (title5) ---- */
+/*h2,h3,p
+---------------------------------------------------------------------------*/
+/*h2*/
+main h2.title5-parts {
+	background: var(--primary-color);		/*背景色。theme.cssのprimary-colorを読み込みます。*/
+	color: var(--primary-inverse-color);	/*文字色。theme.cssのprimary-inverse-colorを読み込みます。*/
+	border-radius: 5px;	/*角を丸くする*/
+	padding-inline: 1rem;	/*左右に1文字分の余白*/
+	font-size: 1.3rem;	/*文字サイズ130%*/
+}
+
+/*h3*/
+main h3.title5-parts {
+	border-bottom: 2px solid var(--primary-color);	/*下線の幅、線種、var以降は色の指定でtheme.cssのprimary-colorを読み込みます*/
+	padding-inline: 1rem;	/*左右に1文字分の余白*/
+	font-size: 1.2rem;	/*文字サイズ120%*/
+}
+
+/*p*/
+main p {
+	padding-inline: 1rem;	/*左右に1文字分の余白*/
+}
+
+/*bg1-primary-parts内で使用した場合*/
+main .bg1-primary-parts h2.title5-parts {
+	background: var(--primary-inverse-color);		/*背景色。theme.cssのprimary-inverse-colorを読み込みます。*/
+	color: var(--primary-color);	/*文字色。theme.cssのprimary-colorを読み込みます。*/
+}
+main .bg1-primary-parts h3.title5-parts {
+	border-bottom: 2px solid var(--primary-inverse-color);	/*下線の幅、線種、var以降は色の指定でtheme.cssのprimary-inverse-colorを読み込みます*/
+}
+/*bg1-accent-parts内で使用した場合*/
+main .bg1-accent-parts h2.title5-parts {
+	background: var(--accent-inverse-color);		/*背景色。theme.cssのaccent-inverse-colorを読み込みます。*/
+	color: var(--accent-color);	/*文字色。theme.cssのaccent-colorを読み込みます。*/
+}
+main .bg1-accent-parts h3.title5-parts {
+	border-bottom: 2px solid var(--accent-inverse-color);	/*下線の幅、線種、var以降は色の指定でtheme.cssのaccent-inverse-colorを読み込みます*/
+}
+
+/* ---- 円形のカラムレイアウト（list-circle1-auto） (list-circle1-auto) ---- */
+/*list-circle1-auto-parts（カラムブロック）
+---------------------------------------------------------------------------*/
+.list-circle1-auto-parts * {margin: 0;padding: 0;}
+
+/*ボックス全体*/
+.list-circle1-auto-parts {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));	/*ボックス１個あたりの最低幅が250pxで自動改行*/
+	gap: 3rem;		/*ボックス同士の間に空けるスペース。1.5文字分。*/
+	font-size: 0.9rem;	/*文字サイズ90%*/
+}
+
+/*ボックス１個あたり*/
+.list-circle1-auto-parts .list-parts {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+/*画像*/
+.list-circle1-auto-parts .list-parts figure {
+	border-radius: 50%;	/*円形にする*/
+	overflow: hidden;
+}
+
+/*テキストボックス*/
+.list-circle1-auto-parts .list-parts .text-parts {
+	flex: 1;
+	text-align: center;	/*テキストをセンタリング*/
+}
+
+/*説明だけ小さめにする*/
+.list-circle1-auto-parts .list-parts p {
+	font-size: 0.9em;	/*文字サイズ*/
+	line-height: 1.5;	/*行間*/
+}
+
+/*square（正方形）画像*/
+.list-circle1-auto-parts.square .list-parts figure {
+	width: 100%;
+	aspect-ratio: 1 / 1;	/*幅に対して高さを同じにする*/
+}
+.list-circle1-auto-parts.square .list-parts figure img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;			/*コンテナいっぱいにカバー、余分な部分はカット*/
+	object-position: center;	/*中央部分を表示*/
+}
+
+/* ---- フッターブロック（footer1） (footer1) ---- */
+/*フッター
+---------------------------------------------------------------------------*/
+#footer1-parts ul {list-style: none;}
+#footer1-parts p {margin: 0;}
+
+/*フッターボックス全体*/
+#footer1-parts {
+	font-size: 0.8rem;	/*文字サイズ80%*/
+    padding: var(--content-space-s);	/*ボックス内の余白。theme.cssのcontent-space-sを読み込みます。*/
+    background: var(--primary-color);	/*背景色。theme.cssのprimary-colorを読み込みます。*/
+    color: var(--primary-inverse-color);	/*文字色。theme.cssのprimary-inverse-colorを読み込みます。*/
+}
+
+/*ロゴの最大幅*/
+#footer1-parts .logo {
+	max-width: 400px;
+}
+
+/*フッター直下のdiv（２つのブロックそれぞれ）*/
+#footer1-parts > div {
+	display: flex;
+	flex-direction: column;	/*縦積み*/
+	gap: 1rem;	/*要素間に空けるスペース。１文字分。*/
+}
+
+/*2つ目（右側）ブロック*/
+#footer1-parts .menu {
+    display: flex;	/*フッターメニューを横並びに*/
+    gap: 2rem;		/*メニュー（ul）同士の間に空けるスペース。２文字分。*/
+    align-items: flex-start;
+}
+
+	/*画面幅900px以上の追加指定*/
+	@media (min-width: 900px){
+	
+	/*フッターボックス全体*/
+	#footer1-parts {
+		display: flex;	/*横並びにする*/
+		justify-content: space-between;
+		gap: 2rem;	/*左右のボックスの間に空けるスペース。２文字分。*/
+	}
+	
+	/*1つ目（左側）ブロック*/
+	#footer1-parts > div:nth-of-type(1) {
+		flex: 0 0 30%;	/*幅を30%。お好みで。*/
+	}
+
+	}/*追加指定ここまで*/
+
+/*Copyright部分*/
+#footer1-parts small {
+	display: block;
+	text-align: right;	/*右寄せ*/
+	margin-top: auto;	/*下に*/
+}
+
+
+/*SNSアイコン
+---------------------------------------------------------------------------*/
+.sns1-parts {
+	list-style: none;
+	margin: 0;padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;		/*アイコン同士のマージン的な要素。１文字分。*/
+}
+
+.sns1-parts i {
+	font-size: 30px;	/*アイコンサイズ*/
+}
